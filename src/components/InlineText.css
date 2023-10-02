@@ -116,7 +116,7 @@
   position: absolute;
   bottom: 100%;
   left: 25%;
-  transform: translateX(-6%) translateY(8px);
+  transform: translateX(3%) translateY(14px);
   background-color: #fff;
   border: 1px solid #ccc;
   padding: 10px;
@@ -132,12 +132,15 @@
   position: absolute;
   width: 8px;
   height: 8px;
-  border: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-right:1px solid #ccc ;
   background-color: #fff;
   transform: rotate(45deg);
   margin-left: 90%;
   margin-top:-43px;
   z-index:2 !important;
+  
+
 }
 
 .stationary-item {
