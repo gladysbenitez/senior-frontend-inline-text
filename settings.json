@@ -1,0 +1,15 @@
+{
+    "files.exclude": {},
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "files.associations": {
+      "*.js": "javascript",
+      "*.jsx": "javascriptreact",
+      "*.ts": "typescript",
+      "*.tsx": "typescriptreact"
+    },
+    "npm.packageManager": "yarn",
+    "eslint.packageManager": "yarn"
+  }
+  

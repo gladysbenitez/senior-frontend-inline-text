@@ -1,0 +1,228 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.inlineText-container {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  width: 20%;
+  margin: 0 auto;
+  margin-top: 20%;
+  position: relative;
+  width: 280px;
+
+}
+
+.inlineText-input-container{
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+
+}
+
+.inlineText-input {
+  background-image: url('../assets/svg/logo_compose.png');
+  font-family: 'Inter', sans-serif;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 20px 20px;
+  padding-left: 40px !important;
+  display: block;
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+  border: 1px solid #E1E1E1;
+  border-radius: 4px 4px 0 0;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.input-icon-right {
+  pointer-events: auto !important;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  right: 10px;
+}
+
+.list-and-options-container {
+  border: 1px solid #E1E1E1;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.list-container {
+  width: 280px;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #E1E1E1;
+  border-top: none;
+  border-bottom: none; 
+  border-radius: 0;
+  box-shadow: 0 0px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
+  box-sizing: border-box;
+  overflow-y: auto;
+  max-height: 200px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.list-container:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 1px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: -1;
+}
+
+.list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 10px;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  padding: 6px 8px 6px 10px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+
+}
+
+.list-item:hover {
+  background-color: #f7f7f7;
+  border-radius: 10px;
+}
+
+.list-item-icon {
+  margin-right: 10px;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 25%;
+  transform: translateX(-6%) translateY(8px);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1 !important;
+  width: 70%;
+  font-size: 10px;
+  overflow: hidden;
+}
+
+.tooltip-arrow {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  transform: rotate(45deg);
+  margin-left: 90%;
+  margin-top:-43px;
+  z-index:2 !important;
+}
+
+.stationary-item {
+  color: #4a4850;
+  padding: 12px 0px 6px 2px;
+  text-align:left;
+  font-family: 'Inter', sans-serif;
+  font-size:14px;
+}
+
+.proTip-container {
+  border-top: 1px solid #ccc;
+  padding: 10px;
+  padding-top: 18px;
+  background-color: #fff;
+}
+
+.proTip-bubble {
+  background-color: #F9F5FF;
+  color: #6941C6;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  padding: 5px 10px;
+  border-radius: 16px;
+  display: table-cell;
+  align-items: left;
+  position: relative;
+  margin-left: -20px; 
+}
+
+.proTip-text {
+  display: flex;
+  text-align: left;
+  padding: 8px 8px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.enter-instruction {
+  text-align: left;
+  padding: 10px;
+  font-size: 12px;
+  color: #475467;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.enter-button {
+  font-family: 'Inter', sans-serif;
+  color: #475467;
+  padding: 5px 10px;
+  margin: 0 5px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  border-radius: 4px;
+  border: 1px solid var(--gray-100, #F2F4F7);
+  background: var(--gray-50, #F9FAFB);
+  mix-blend-mode: multiply;
+}
+
+.advanced-options {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex: 1 0 0;
+  border: 1px solid #E1E1E1;
+  border-radius: 0px 0px 4px 4px;
+  padding: 14px 8px 18px 18px;
+  bottom: 0;
+  left: 0;
+  width: 280px;
+  z-index: 4;
+  background-color: #fff !important;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px; 
+  line-height: 20px;
+}
+.chevron-down{
+padding-left: 50px;
+}
