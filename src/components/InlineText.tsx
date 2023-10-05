@@ -60,6 +60,7 @@ export const InlineText: React.FC<InlineTextProps> = ({ id }) => {
     if (!value.startsWith(prefix)) {
       setInputValue(prefix); // reset the input value if the user tries to delete the prefix
     } else {
+      console.log(value,'value')
       setInputValue(value);
     }
     if (isTooltipVisible) {
@@ -79,7 +80,19 @@ export const InlineText: React.FC<InlineTextProps> = ({ id }) => {
     return vowels.includes(word[0].toLowerCase()) ? 'an' : 'a';
   };
 
-  useEffect(() => {
+  const isOrderedSubstring = (text:string, sub:string) => {
+    //iterate through every char in text 
+    //if the char matches the curr char increment pointer for substring 
+    let j = 0 //pointer for substring 
+    for( let i = 0;  i < text.length && j < sub.length ; i++){
+      if(text[i] === sub[j]){
+        j++; 
+      }
+    } 
+    return j === sub.length
+  }
+
+  useEffect(()=>{
     const userText = inputValue.substring(prefix.length).trim(); // Extracting the user input, ignoring the prefix.
 
     // If there's no userText, reset the prefix to the default.
@@ -97,13 +110,21 @@ export const InlineText: React.FC<InlineTextProps> = ({ id }) => {
       setInputValue(inputValue.replace(prefix, `Write ${article} `));
       setPrefix(`Write ${article} `);
     }
-
+      
     // Manage the filter functionality.
     if (userText.includes('//')) {
       setFilteredOptions(listOptions); // If userText has //, then show all listOptions.
     } else {
-      setFilteredOptions(listOptions.filter((option) => option.text.includes(userText)));
+      setFilteredOptions(listOptions.filter((option) => isOrderedSubstring(option.text, userText)));
     }
+  }, [inputValue,prefix,showProTip])
+
+  useEffect(() => {
+    const userText = inputValue.substring(prefix.length).trim(); // Extracting the user input, ignoring the prefix.
+
+    // Close function  SUBSTRING 
+    
+  
 
     // Additional logic to manage whether to show the ProTip and Advanced Options sections.
     setShowProTip(filteredOptions.length === 1);
